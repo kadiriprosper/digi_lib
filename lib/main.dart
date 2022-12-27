@@ -1,14 +1,16 @@
-import 'dart:io';
-
 import 'package:digital_library/screens/large/main_screen_large.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 // Directory? localStorage;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // localStorage = await getApplicationDocumentsDirectory();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
